@@ -1,0 +1,85 @@
+.menuP {
+  padding: 2%;
+  text-align: center;
+  background-color: #0d0d0d;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.titulo-juego {
+  font-size: 28px;
+  color: #4af;
+  margin-bottom: 1%;
+  text-shadow: 2px 2px #000;
+}
+
+.slogan {
+  font-size: 1em;
+  color: #fff;
+  margin-bottom: 2%;
+  animation: flicker 2s infinite alternate;
+}
+
+.imagen-principal {
+  width: 45%;
+  max-width: 80%;
+  margin-bottom: 2%;
+  border: 2px solid #4af;
+  box-shadow: 0 0 25px #4af;
+  image-rendering: pixelated;
+}
+
+.resumen {
+  font-size: 0.9em;
+  max-width: 45%;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.botones {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn {
+  font-size: 12px;
+  text-decoration: none;
+  padding: 12px 20px;
+  border: 2px solid #4af;
+  color: #4af;
+  background-color: transparent;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #4af;
+  color: #000;
+  cursor: pointer;
+}
+
+@keyframes flicker {
+  0% {
+    opacity: 1;
+  }
+
+  45% {
+    opacity: 0.6;
+  }
+
+  60% {
+    opacity: 1;
+  }
+
+  75% {
+    opacity: 0.7;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
