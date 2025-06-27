@@ -1,0 +1,63 @@
+/* ================================
+   NAV
+================================== */
+nav {
+    background-color: #1f1f30;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 1rem;
+    font-weight: bold;
+}
+
+nav span {
+    color: white;
+    margin-right: 1rem;
+}
+
+/* ================================
+   CONTENIDO PRINCIPAL
+================================== */
+main {
+    padding: 2rem;
+}
+
+/* ================================
+   VENTANA EMERGENTE: ACCESO RESTRINGIDO
+================================== */
+
+.popup-content button {
+    margin-top: 1rem;
+    padding: 10px 20px;
+    border: none;
+    background-color: #4caf50;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.popup-content button:hover {
+    background-color: #3e8e41;
+}
+
+
+/* ================================
+   ANIMACIONES
+================================== */
+@keyframes fadein {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

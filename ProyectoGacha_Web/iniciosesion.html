@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - Proyecto Gacha</title>
+    <link rel="stylesheet" href="css/global.css" />
+    <link rel="stylesheet" href="css/login.css" />
+  </head>
+  <body>
+    <div class="login-layout">
+      
+      <div class="left-column">
+        <!-- Aquí puedes agregar imagen, logo o dejarlo vacío -->
+      </div>
+
+      <div class="right-column">
+        <div class="login-container">
+          <h1>Iniciar Sesión</h1>
+          <form
+            action="backend/controllers/loginController.php"
+            method="POST"
+            onsubmit="return validarFormulario()"
+          >
+            <input
+              type="email"
+              name="correo"
+              id="correo"
+              placeholder="Correo electrónico"
+              required
+            />
+
+            <div class="input-group">
+              <input
+                type="password"
+                name="contraseña"
+                id="contraseña"
+                placeholder="Contraseña"
+                required
+              />
+              <span
+                class="toggle-password"
+                onclick="togglePassword('contraseña', this)"
+                >👁️</span
+              >
+            </div>
+
+            <button type="submit">Entrar</button>
+          </form>
+          <p>¿No tienes cuenta? <a href="register.html">Regístrate aquí</a></p>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
