@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once("../db/connection.php");
+include_once("/ProyectoGacha_Web/server/db/connection.php");
 
 $correo = $_POST['correo'];
 $contraseña = $_POST['contraseña'];
@@ -18,7 +18,7 @@ if ($usuario = $result->fetch_assoc()) {
         $_SESSION['usuario_nombre'] = $usuario['nombre'];
 
         // Redirigir a la pantalla flotante de bienvenida
-        header("Location: ../../principal.html");
+        header("Location: /ProyectoGacha_Web/pages/menuPrincipal.html");
         exit();
     } else {
         echo "Contraseña incorrecta.";

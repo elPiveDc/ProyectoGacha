@@ -44,7 +44,7 @@ function validarRegistro() {
 // VERIFICACIÓN DE SESIÓN Y ACTUALIZACIÓN DEL NAV
 // ===============================
 document.addEventListener("DOMContentLoaded", () => {
-  fetch("backend/utils/session_status.php")
+  fetch("/ProyectoGacha_Web/server/utils/session_status.php")
     .then((response) => response.json())
     .then((data) => {
       const navUsuario = document.getElementById("nav-usuario");
@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // Mostrar nav con nombre y cerrar sesión
         navUsuario.innerHTML = `
           <span style="color: white;">Hola, ${data.nombre}</span>
-          <a href="backend/utils/logout.php">Cerrar sesión</a>
+          <a href="/ProyectoGacha_Web/server/utils/logout.php">Cerrar sesión</a>
         `;
 
         // Activar enlace de descarga real

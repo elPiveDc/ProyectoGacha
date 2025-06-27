@@ -2,5 +2,5 @@
 session_start();
 session_unset();
 session_destroy();
-header("Location: ../../principal.html"); // subir dos niveles
+header("Location: /ProyectoGacha_Web/pages/menuPrincipal.html"); 
 exit();
