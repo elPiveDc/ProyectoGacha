@@ -53,3 +53,10 @@
   transform: scaleX(1);
   transform-origin: bottom left;
 }
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+}
