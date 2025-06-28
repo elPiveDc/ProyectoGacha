@@ -1,52 +1,70 @@
 <!DOCTYPE html>
 <html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inicia Sesión</title>
+    <link rel="stylesheet" href="/ProyectoGacha_Web/assets/css/base.css" />
+    <link rel="stylesheet" href="/ProyectoGacha_Web/assets/css/login.css" />
+    <script defer src="/ProyectoGacha_Web/assets/js/navLoader.js"></script>
+    <script defer src="/ProyectoGacha_Web/assets/js/main.js"></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Inicia Sesión</title>
-  <link rel="stylesheet" href="/ProyectoGacha_Web/assets/css/base.css" />
-  <link rel="stylesheet" href="/ProyectoGacha_Web/assets/css/login.css" />
-  <script defer src="/ProyectoGacha_Web/assets/js/navLoader.js"></script>
-  <script defer src="/ProyectoGacha_Web/assets/js/main.js"></script>
-</head>
+  <body>
+    <header>
+      <div id="nav-container"></div>
+    </header>
 
-<body>
-  <header>
+    <div class="login-layout">
+      <!-- Columna izquierda con imagen -->
+      <div class="left-column">
+        <img
+          class="img-fondo"
+          src="/ProyectoGacha_Web/assets/Images/fondo.JPG"
+          alt="Imagen de fondo"
+        />
+      </div>
 
-    <div id="nav-container"></div>
-  </header>
+      <!-- Columna derecha con login -->
+      <div class="right-column">
+        <div class="login-container">
+          <h1>Iniciar Sesión</h1>
+          <form
+            action="/ProyectoGacha_Web/server/controllers/loginController.php"
+            method="POST"
+            onsubmit="return validarFormulario()"
+          >
+            <input
+              type="email"
+              name="correo"
+              id="correo"
+              placeholder="Correo electrónico"
+              required
+            />
 
-  <div class="login-layout">
+            <div class="input-group">
+              <input
+                type="password"
+                name="contraseña"
+                id="contraseña"
+                placeholder="Contraseña"
+                required
+              />
+              <span
+                class="toggle-password"
+                onclick="togglePassword('contraseña', this)"
+                >👁️</span
+              >
+            </div>
 
-    <!-- Columna izquierda con imagen -->
-    <div class="left-column">
-      <img class="img-fondo" src="/ProyectoGacha_Web/assets/Images/fondo.JPG" alt="Imagen de fondo">
-    </div>
-
-    <!-- Columna derecha con login -->
-    <div class="right-column">
-      <div class="login-container">
-        <h1>Iniciar Sesión</h1>
-        <form action="/ProyectoGacha_Web/server/controllers/loginController.php" method="POST"
-          onsubmit="return validarFormulario()">
-          <input type="email" name="correo" id="correo" placeholder="Correo electrónico" required />
-
-          <div class="input-group">
-            <input type="password" name="contraseña" id="contraseña" placeholder="Contraseña" required />
-            <span class="toggle-password" onclick="togglePassword('contraseña', this)">👁️</span>
-          </div>
-
-          <button type="submit">Entrar</button>
-        </form>
-        <p>
-          ¿No tienes cuenta?
-          <a href="/ProyectoGacha_Web/pages/register.html">Regístrate aquí</a>
-        </p>
+            <button type="submit">Entrar</button>
+          </form>
+          <p>
+            ¿No tienes cuenta?
+            <a href="/ProyectoGacha_Web/pages/register.html">Regístrate aquí</a>
+          </p>
+        </div>
       </div>
     </div>
-
-  </div>
-</body>
-
+  </body>
 </html>

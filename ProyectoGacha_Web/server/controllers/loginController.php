@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once("/ProyectoGacha_Web/server/db/connection.php");
+include_once("../db/connection.php");
 
 $correo = $_POST['correo'];
 $contraseña = $_POST['contraseña'];
