@@ -1,44 +1,64 @@
+/* ===========================
+   SECCIÓN PRINCIPAL CON FONDO
+=========================== */
 .menuP {
-  padding: 2%;
-  text-align: center;
-  background-color: #0d0d0d;
-  color: #ffffff;
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background: url("/ProyectoGacha_Web/assets/Images/fondo.JPG") no-repeat center center/cover;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 2rem;
+  overflow: hidden;
 }
 
+/* Capa oscura encima de la imagen */
+.menuP .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 15, 30, 0.7);
+  z-index: 1;
+}
+
+/* Contenido por encima */
+.menuP .contenido {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: #ffffff;
+  max-width: 700px;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Título */
 .titulo-juego {
-  font-size: 28px;
+  font-size: 2.5rem;
   color: #4af;
-  margin-bottom: 1%;
   text-shadow: 2px 2px #000;
+  margin-bottom: 1rem;
 }
 
+/* Slogan con animación */
 .slogan {
-  font-size: 1em;
+  font-size: 1.2rem;
   color: #fff;
-  margin-bottom: 2%;
+  margin-bottom: 1.5rem;
   animation: flicker 2s infinite alternate;
 }
 
-.imagen-principal {
-  width: 45%;
-  max-width: 80%;
-  margin-bottom: 2%;
-  border: 2px solid #4af;
-  box-shadow: 0 0 25px #4af;
-  image-rendering: pixelated;
-}
-
+/* Resumen */
 .resumen {
-  font-size: 0.9em;
-  max-width: 45%;
-  margin-bottom: 30px;
+  font-size: 1rem;
+  margin-bottom: 2rem;
   line-height: 1.6;
+  animation: fadeUp 1.5s ease;
 }
 
+/* Botones */
 .botones {
   display: flex;
   gap: 20px;
@@ -47,39 +67,38 @@
 }
 
 .btn {
-  font-size: 12px;
+  font-size: 14px;
   text-decoration: none;
-  padding: 12px 20px;
+  padding: 12px 24px;
   border: 2px solid #4af;
   color: #4af;
   background-color: transparent;
   transition: all 0.3s ease;
+  border-radius: 5px;
 }
 
 .btn:hover {
   background-color: #4af;
   color: #000;
   cursor: pointer;
+  transform: scale(1.05);
 }
 
+/* ANIMACIONES */
 @keyframes flicker {
-  0% {
-    opacity: 1;
-  }
+  0% { opacity: 1; }
+  45% { opacity: 0.6; }
+  60% { opacity: 1; }
+  75% { opacity: 0.7; }
+  100% { opacity: 1; }
+}
 
-  45% {
-    opacity: 0.6;
-  }
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 
-  60% {
-    opacity: 1;
-  }
-
-  75% {
-    opacity: 0.7;
-  }
-
-  100% {
-    opacity: 1;
-  }
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }

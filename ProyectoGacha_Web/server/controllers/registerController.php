@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $stmt->bind_param("sss", $nombre, $correo, $hash);
 
     if ($stmt->execute()) {
-        header("Location: ../../iniciosesion.html");
+        header("Location: /ProyectoGacha_Web/pages/iniciosesion.html");
         exit();
     } else {
         echo "Error: " . $stmt->error;
