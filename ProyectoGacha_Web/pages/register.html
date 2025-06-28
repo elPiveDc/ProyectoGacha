@@ -1,78 +1,54 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Registro - Proyecto Gacha</title>
-    <link rel="stylesheet" href="css/global.css" />
-    <link rel="stylesheet" href="css/register.css" />
-  </head>
-  <body>
-    <div class="register-layout">
-      
-      <div class="left-column">
-        <!-- Aquí puedes agregar imagen, logo o dejarlo vacío -->
-      </div>
 
-      <div class="right-column">
-        <div class="register-container">
-          <h1>Registrarse</h1>
-          <form
-            action="backend/controllers/registerController.php"
-            method="POST"
-            onsubmit="return validarRegistro()"
-          >
-            <input
-              type="text"
-              name="nombre"
-              id="nombre"
-              placeholder="Nombre"
-              required
-            />
-            <input
-              type="email"
-              name="correo"
-              id="correo"
-              placeholder="Correo electrónico"
-              required
-            />
-            <div class="input-group">
-              <input
-                type="password"
-                id="contrasena"
-                placeholder="Contraseña"
-                required
-              />
-              <span
-                class="toggle-password"
-                onclick="togglePassword('contrasena', this)"
-              >
-                👁️
-              </span>
-            </div>
-            <div class="input-group">
-              <input
-                type="password"
-                id="confirmar"
-                placeholder="Confirmar contraseña"
-                required
-              />
-              <span
-                class="toggle-password"
-                onclick="togglePassword('confirmar', this)"
-              >
-                👁️
-              </span>
-            </div>
-            <button type="submit">Crear cuenta</button>
-          </form>
-          <p>
-            ¿Ya tienes cuenta?
-            <a href="iniciosesion.html">Inicia sesión aquí</a>
-          </p>
-        </div>
-      </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registro - Proyecto Gacha</title>
+  <link rel="stylesheet" href="/ProyectoGacha_Web/assets/css/base.css" />
+  <link rel="stylesheet" href="/ProyectoGacha_Web/assets/css/register.css" />
+  <script defer src="/ProyectoGacha_Web/assets/js/navLoader.js"></script>
+  <script defer src="/ProyectoGacha_Web/assets/js/main.js"></script>
+</head>
+
+<body>
+
+  <header>
+    <div id="nav-container"></div>
+  </header>
+
+  <div class="register-layout">
+    <div class="left-column">
+      <img class="img-fondo" src="/ProyectoGacha_Web/assets/Images/fondo.JPG" alt="Imagen de fondo">
     </div>
 
-    <script src="js/main.js"></script>
-  </body>
+    <div class="right-column">
+      <div class="register-container">
+        <h1>Regístrate</h1>
+        <form action="/ProyectoGacha_Web/server/controllers/registerController.php" method="POST"
+          onsubmit="return validarRegistro()">
+          <input type="text" name="nombre" id="nombre" placeholder="Nombre" required />
+          <input type="email" name="correo" id="correo" placeholder="Correo electrónico" required />
+
+          <div class="input-group">
+            <input type="password" id="contrasena" name="contrasena" placeholder="Contraseña" required />
+            <span class="toggle-password" onclick="togglePassword('contrasena', this)">👁️</span>
+          </div>
+
+          <div class="input-group">
+            <input type="password" id="confirmar" name="confirmar" placeholder="Confirmar contraseña" required />
+            <span class="toggle-password" onclick="togglePassword('confirmar', this)">👁️</span>
+          </div>
+
+          <button type="submit">Crear cuenta</button>
+        </form>
+        <p>
+          ¿Ya tienes cuenta?
+          <a href="/ProyectoGacha_Web/pages/iniciosesion.html">Inicia sesión aquí</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</body>
+
 </html>
