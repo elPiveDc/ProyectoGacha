@@ -17,7 +17,7 @@ if ($usuario = $result->fetch_assoc()) {
         $_SESSION['usuario_id'] = $usuario['id'];
         $_SESSION['usuario_nombre'] = $usuario['nombre'];
 
-        // Redirigir a la pantalla flotante de bienvenida
+        // Redirigir a la pantalla Principal
         header("Location: /ProyectoGacha_Web/pages/menuPrincipal.html");
         exit();
     } else {

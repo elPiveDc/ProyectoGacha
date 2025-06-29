@@ -40,42 +40,6 @@ function validarRegistro() {
   return true;
 }
 
-// ===============================
-// VERIFICACIÓN DE SESIÓN Y ACTUALIZACIÓN DEL NAV
-// ===============================
-document.addEventListener("DOMContentLoaded", () => {
-  fetch("/ProyectoGacha_Web/server/utils/session_status.php")
-    .then((response) => response.json())
-    .then((data) => {
-      const navUsuario = document.getElementById("nav-usuario");
-      const btnDescarga = document.getElementById("btn-descargar");
-
-      if (data.logueado) {
-        // Mostrar nav con nombre y cerrar sesión
-        navUsuario.innerHTML = `
-          <span style="color: white;">Hola, ${data.nombre}</span>
-          <a href="/ProyectoGacha_Web/server/utils/logout.php">Cerrar sesión</a>
-        `;
-
-        // Activar enlace de descarga real
-        btnDescarga.setAttribute("href", "https://youtu.be/-wdR-fBr8oo?si=NLcKMMMRYXA_wcix");
-        btnDescarga.onclick = null;
-      } else {
-        // Usuario no logueado: proteger botón
-        btnDescarga.onclick = protegerDescarga;
-      }
-    });
-});
-
-// ===============================
-// FUNCIÓN PARA BLOQUEAR DESCARGA SIN SESIÓN
-// ===============================
-function protegerDescarga() {
-  const popup = document.getElementById("popup-alerta");
-  if (popup) {
-    popup.style.display = "flex";
-  }
-}
 
 /* ================================
   VER 👁️ Y OCULTAR 🙈 CONTRASEÑA 
@@ -87,4 +51,3 @@ function togglePassword(inputId, toggleIcon) {
   input.type = isPassword ? "text" : "password";
   toggleIcon.textContent = isPassword ? "🙈" : "👁️";
 }
-

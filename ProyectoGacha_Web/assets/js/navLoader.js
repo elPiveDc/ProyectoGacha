@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", function () {
   fetch("nav.html")
     .then((response) => response.text())
@@ -27,18 +26,21 @@ document.addEventListener("DOMContentLoaded", () => {
   fetch("/ProyectoGacha_Web/server/utils/session_status.php")
     .then((response) => response.json())
     .then((data) => {
+      const nombre = document.getElementById("nombre");
       const navUsuario = document.getElementById("nav-usuario");
       const btnDescarga = document.getElementById("btn-descargar");
 
       if (data.logueado) {
         // Mostrar nav con nombre y cerrar sesión
-        navUsuario.innerHTML = `
-          <span style="color: white;">Hola, ${data.nombre}</span>
-          <a href="/ProyectoGacha_Web/server/utils/logout.php">Cerrar sesión</a>
-        `;
+
+        nombre.innerHTML = `<p>Hola, ${data.nombre}</p>`;
+        navUsuario.innerHTML = `<a href="/ProyectoGacha_Web/server/utils/logout.php">Cerrar sesión</a>`;
 
         // Activar enlace de descarga real
-        btnDescarga.setAttribute("href", "https://youtu.be/-wdR-fBr8oo?si=NLcKMMMRYXA_wcix");
+        btnDescarga.setAttribute(
+          "href",
+          "https://youtu.be/-wdR-fBr8oo?si=NLcKMMMRYXA_wcix"
+        );
         btnDescarga.onclick = null;
       } else {
         // Usuario no logueado: proteger botón

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contacto</title>
+    <link rel="stylesheet" href="/ProyectoGacha_Web/assets/css/base.css" />
+    <link
+      rel="stylesheet"
+      href="/ProyectoGacha_Web/assets/css/contactoEstilo.css"
+    />
+    <script defer src="/ProyectoGacha_Web/assets/js/navLoader.js"></script>
+    <script defer src="/ProyectoGacha_Web/assets/js/contacto.js"></script>
+  </head>
+
+  <body>
+    <header>
+      <div id="nav-container"></div>
+    </header>
+
+    <main class="contacto-layout">
+      <div class="contacto-container">
+        <h1>Contacto</h1>
+        <p class="descripcion">
+          ¿Tienes dudas, sugerencias o comentarios? ¡Escríbenos!
+        </p>
+        <form id="form-contacto" onsubmit="return mostrarPopup()">
+          <input
+            type="text"
+            name="nombre"
+            id="nombre"
+            placeholder="Tu nombre"
+            required
+          />
+          <input
+            type="email"
+            name="correo"
+            id="correo"
+            placeholder="Tu correo electrónico"
+            required
+          />
+          <textarea
+            name="mensaje"
+            id="mensaje"
+            placeholder="Escribe tu mensaje..."
+            rows="5"
+            required
+          ></textarea>
+          <button type="submit" id ="enviar" >Enviar mensaje</button>
+        </form>
+
+        <div class="popup-confirmacion" id="popup-confirmacion">
+          <div class="popup-content">
+            <h2>Mensaje enviado</h2>
+            <p>Gracias por contactarnos :D!</p>
+            <button onclick="cerrarPopup()">Cerrar</button>
+          </div>
+        </div>
+
+
+      </div>
+    </main>
+  </body>
+</html>
