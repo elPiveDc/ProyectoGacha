@@ -4,15 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contacto</title>
-    <link rel="stylesheet" href="/ProyectoGacha_Web/assets/css/base.css" />
-    <link
-      rel="stylesheet"
-      href="/ProyectoGacha_Web/assets/css/contactoEstilo.css"
-    />
-    <script defer src="/ProyectoGacha_Web/assets/js/navLoader.js"></script>
-    <script defer src="/ProyectoGacha_Web/assets/js/contacto.js"></script>
+    <link rel="stylesheet" href="../assets/css/base.css" />
+    <link rel="stylesheet" href="../assets/css/contactoEstilo.css" />
+    <script defer src="../assets/js/contacto.js"></script>
+    <script defer src="../assets/js/navLoader.js"></script>
   </head>
-
   <body>
     <header>
       <div id="nav-container"></div>
@@ -24,7 +20,8 @@
         <p class="descripcion">
           ¿Tienes dudas, sugerencias o comentarios? ¡Escríbenos!
         </p>
-        <form id="form-contacto" onsubmit="return mostrarPopup()">
+
+        <form id="form-contacto" method="POST">
           <input
             type="text"
             name="nombre"
@@ -46,19 +43,23 @@
             rows="5"
             required
           ></textarea>
-          <button type="submit" id ="enviar" >Enviar mensaje</button>
+          <button type="submit" id="enviar">Enviar mensaje</button>
         </form>
-
-        <div class="popup-confirmacion" id="popup-confirmacion">
-          <div class="popup-content">
-            <h2>Mensaje enviado</h2>
-            <p>Gracias por contactarnos :D!</p>
-            <button onclick="cerrarPopup()">Cerrar</button>
-          </div>
-        </div>
-
-
       </div>
     </main>
+
+    <!-- Popup si no hay sesión -->
+    <div class="popup" id="popup-alerta" style="display: none">
+      <div class="popup-content">
+        <span class="popup-close" onclick="cerrarPopup()">×</span>
+        <h2>Acceso restringido</h2>
+        <p>Para enviar el correo, debes iniciar sesión primero.</p>
+        <button
+          onclick="window.location.href='/ProyectoGacha_Web/pages/iniciosesion.html'"
+        >
+          Iniciar sesión
+        </button>
+      </div>
+    </div>
   </body>
 </html>

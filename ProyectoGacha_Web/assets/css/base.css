@@ -9,6 +9,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: 'Press Start 2P', sans-serif !important; /* Fuerza la fuente en todo */
 }
 
 :root {
@@ -18,7 +19,6 @@
 }
 
 body {
-  font-family: 'Press Start 2P', sans-serif;
   background: #0d0d0d;
   color: white;
   line-height: 1.5;
@@ -40,8 +40,15 @@ footer {
   z-index: 1;
 }
 
+/* Aplica la fuente explícitamente a todos los posibles elementos textuales */
+h1, h2, h3, h4, h5, h6,
+p, a, span, div, label,
+input, textarea, button, select, option {
+  font-family: 'Press Start 2P', sans-serif !important;
+}
+
 /* ================================
-    VER 👁️ Y OCULTAR 🙈 CONTRASEÑA 
+   VER 👁️ Y OCULTAR 🙈 CONTRASEÑA 
 ================================== */
 
 .input-group {
@@ -51,8 +58,7 @@ footer {
 
 .input-group input {
   width: 100%;
-  padding-right: 40px;
-  /* espacio para el icono */
+  padding-right: 40px; /* espacio para el icono */
 }
 
 .toggle-password {
@@ -67,42 +73,4 @@ footer {
 
 .toggle-password:hover {
   color: #00ffff;
-}
-
-/* ================================
-  ANIMACIONES GLOBALES Y VENTANAS EMERGENTES
-================================== */
-
-.popup {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.75);
-  display: none;
-  justify-content: center;
-  align-items: center;
-  z-index: 10;
-}
-
-.popup-content {
-  background: #2c2c3e;
-  padding: 2rem;
-  border-radius: 10px;
-  color: white;
-  text-align: center;
-  box-shadow: 0 0 15px #00ffc3;
-}
-
-@keyframes fadein {
-  from {
-    opacity: 0;
-    transform: scale(0.9);
-  }
-
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
 }

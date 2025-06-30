@@ -16,6 +16,7 @@ if ($usuario = $result->fetch_assoc()) {
         // Guardar en sesión
         $_SESSION['usuario_id'] = $usuario['id'];
         $_SESSION['usuario_nombre'] = $usuario['nombre'];
+        $_SESSION['usuario_correo'] = $correo;
 
         // Redirigir a la pantalla Principal
         header("Location: /ProyectoGacha_Web/pages/menuPrincipal.html");
@@ -26,3 +27,4 @@ if ($usuario = $result->fetch_assoc()) {
 } else {
     echo "Usuario no encontrado.";
 }
+?>

@@ -1,24 +1,53 @@
-function mostrarPopup() {
-  const nombre = document.getElementById("nombre").value.trim();
-  const correo = document.getElementById("correo").value.trim();
-  const mensaje = document.getElementById("mensaje").value.trim();
+document.addEventListener("DOMContentLoaded", () => {
+  const nombreInput = document.getElementById("nombre");
+  const correoInput = document.getElementById("correo");
+  const mensajeInput = document.getElementById("mensaje");
+  const popup = document.getElementById("popup-alerta");
+  const form = document.getElementById("form-contacto");
 
-  if (!nombre || !correo || !mensaje) {
-    alert("Por favor completa todos los campos.");
-    return false;
-  }
+  let usuarioLogueado = false;
 
-  // Mostrar el popup
-  const popup = document.getElementById("popup-confirmacion");
-  popup.style.display = "flex";
+  fetch("../server/utils/session_status.php")
+    .then((res) => res.json())
+    .then((data) => {
+      if (data.logueado) {
+        nombreInput.value = data.nombre;
+        correoInput.value = data.correo;
+        nombreInput.readOnly = true;
+        correoInput.readOnly = true;
+        usuarioLogueado = true;
+      }
+    });
 
-  // Limpiar el formulario
-  document.getElementById("form-contacto").reset();
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
 
-  return false;
-}
+    if (!usuarioLogueado) {
+      popup.style.display = "flex";
+      return;
+    }
 
-function cerrarPopup() {
-  const popup = document.getElementById("popup-confirmacion");
-  popup.style.display = "none";
-}
+    const mensaje = mensajeInput.value.trim();
+    if (!mensaje) {
+      alert("Por favor escribe un mensaje.");
+      return;
+    }
+
+    const formData = new FormData();
+    formData.append("mensaje", mensaje);
+
+    const res = await fetch("../server/controllers/comentarioController.php", {
+      method: "POST",
+      body: formData,
+    });
+
+    const data = await res.json();
+
+    if (data.status === "ok") {
+      alert(`Mensaje enviado. ¡Gracias por contactarnos! 😊`);
+      mensajeInput.value = "";
+    } else {
+      alert("Error: " + data.msg);
+    }
+  });
+});
