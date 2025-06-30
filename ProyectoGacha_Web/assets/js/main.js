@@ -40,7 +40,6 @@ function validarRegistro() {
   return true;
 }
 
-
 /* ================================
   VER 👁️ Y OCULTAR 🙈 CONTRASEÑA 
 ================================== */

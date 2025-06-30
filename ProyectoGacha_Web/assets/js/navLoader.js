@@ -19,10 +19,12 @@ document.addEventListener("DOMContentLoaded", function () {
     .catch((error) => console.error("Error al cargar el menú:", error));
 });
 
+
 // ===============================
 // VERIFICACIÓN DE SESIÓN Y ACTUALIZACIÓN DEL NAV
 // ===============================
 document.addEventListener("DOMContentLoaded", () => {
+
   fetch("/ProyectoGacha_Web/server/utils/session_status.php")
     .then((response) => response.json())
     .then((data) => {
@@ -32,6 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (data.logueado) {
         // Mostrar nav con nombre y cerrar sesión
+        
 
         nombre.innerHTML = `<p>Hola, ${data.nombre}</p>`;
         navUsuario.innerHTML = `<a href="/ProyectoGacha_Web/server/utils/logout.php">Cerrar sesión</a>`;
@@ -58,3 +61,7 @@ function protegerDescarga() {
     popup.style.display = "flex";
   }
 }
+
+function cerrarPopup() {
+    document.getElementById('popup-alerta').style.display = 'none';
+  }
