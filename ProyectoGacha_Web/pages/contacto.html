@@ -19,6 +19,7 @@
         <h1>Contacto</h1>
         <p class="descripcion">
           ¿Tienes dudas, sugerencias o comentarios? ¡Escríbenos!
+          (Es necesario iniciar sesión)
         </p>
 
         <form id="form-contacto" method="POST">
@@ -48,11 +49,10 @@
       </div>
     </main>
 
-    <!-- Popup si no hay sesión -->
-    <div class="popup" id="popup-alerta" style="display: none">
+    <div class="popup" id="popup-alerta3" style="display: none">
       <div class="popup-content">
-        <span class="popup-close" onclick="cerrarPopup()">×</span>
-        <h2>Acceso restringido</h2>
+        <span class="popup-close" onclick="cerrarPopup3()">×</span>
+        <h2>¡Recuerda!</h2>
         <p>Para enviar el correo, debes iniciar sesión primero.</p>
         <button
           onclick="window.location.href='/ProyectoGacha_Web/pages/iniciosesion.html'"
@@ -61,5 +61,6 @@
         </button>
       </div>
     </div>
+
   </body>
 </html>

@@ -2,8 +2,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const nombreInput = document.getElementById("nombre");
   const correoInput = document.getElementById("correo");
   const mensajeInput = document.getElementById("mensaje");
-  const popup = document.getElementById("popup-alerta");
   const form = document.getElementById("form-contacto");
+  const enviarBtn = document.getElementById("enviar");
 
   let usuarioLogueado = false;
 
@@ -11,6 +11,12 @@ document.addEventListener("DOMContentLoaded", () => {
     .then((res) => res.json())
     .then((data) => {
       if (data.logueado) {
+        // Si es admin, redirigir automáticamente
+        if (data.es_admin) {
+          window.location.href = "/ProyectoGacha_Web/pages/vercomentarios.html";
+          return;
+        }
+
         nombreInput.value = data.nombre;
         correoInput.value = data.correo;
         nombreInput.readOnly = true;
@@ -19,11 +25,12 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
+  // Manejo del envío del formulario
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
     if (!usuarioLogueado) {
-      popup.style.display = "flex";
+      document.getElementById("popup-alerta3").style.display = "flex";
       return;
     }
 
@@ -44,10 +51,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const data = await res.json();
 
     if (data.status === "ok") {
-      alert(`Mensaje enviado. ¡Gracias por contactarnos! 😊`);
+      alert("Mensaje enviado. ¡Gracias por contactarnos! 😊");
       mensajeInput.value = "";
     } else {
       alert("Error: " + data.msg);
     }
   });
 });
+
+function cerrarPopup3() {
+  document.getElementById("popup-alerta3").style.display = "none";
+}

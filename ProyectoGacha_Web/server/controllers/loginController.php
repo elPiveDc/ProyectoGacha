@@ -2,6 +2,8 @@
 session_start();
 include_once("../db/connection.php");
 
+header('Content-Type: application/json');
+
 $correo = $_POST['correo'];
 $contraseña = $_POST['contraseña'];
 
@@ -18,13 +20,29 @@ if ($usuario = $result->fetch_assoc()) {
         $_SESSION['usuario_nombre'] = $usuario['nombre'];
         $_SESSION['usuario_correo'] = $correo;
 
-        // Redirigir a la pantalla Principal
-        header("Location: /ProyectoGacha_Web/pages/menuPrincipal.html");
-        exit();
+        // Verificar si es admin
+        $adminSql = "SELECT 1 FROM administradores WHERE id_usuario = ? LIMIT 1";
+        $adminStmt = $conn->prepare($adminSql);
+        $adminStmt->bind_param("i", $usuario['id']);
+        $adminStmt->execute();
+        $esAdmin = $adminStmt->get_result()->num_rows > 0;
+        $_SESSION['es_admin'] = $esAdmin;
+
+        // Respuesta para JS
+        echo json_encode([
+            "status" => "ok",
+            "es_admin" => $esAdmin
+        ]);
     } else {
-        echo "Contraseña incorrecta.";
+        echo json_encode([
+            "status" => "error",
+            "msg" => "Contraseña incorrecta."
+        ]);
     }
 } else {
-    echo "Usuario no encontrado.";
+    echo json_encode([
+        "status" => "error",
+        "msg" => "Usuario no encontrado."
+    ]);
 }
 ?>

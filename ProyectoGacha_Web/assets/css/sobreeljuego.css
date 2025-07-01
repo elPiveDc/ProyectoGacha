@@ -12,7 +12,10 @@ h1 {
   color: #00ffc3;
 }
 
-/* Personajes */
+/* ============================
+   🧍‍♂️ Personajes
+============================ */
+
 .grid-personajes {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -49,13 +52,15 @@ h1 {
   color: #ccc;
 }
 
-/* Banner */
+/* ============================
+   🖼️ Banner Clases
+============================ */
+
 .banner-clases {
   position: relative;
   width: 90%;
   max-width: 900px;
   height: 200px;
-  /* más bajo */
   margin: 0 auto;
   overflow: hidden;
   border-radius: 10px;
@@ -84,16 +89,144 @@ h1 {
   0% {
     transform: translateX(0);
   }
-
   33% {
     transform: translateX(-100%);
   }
-
   66% {
     transform: translateX(-200%);
   }
-
   100% {
     transform: translateX(0);
   }
+}
+
+/* ============================
+   📊 Tabla Puntajes
+============================ */
+
+.tabla-puntajes {
+  margin-top: 3rem;
+  padding: 1rem;
+  background-color: #1c1c2e;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #00ffc3;
+}
+
+.tabla-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.tabla-header h2 {
+  color: #00ffc3;
+}
+
+.tabla-botones button {
+  margin-left: 0.5rem;
+  padding: 8px 12px;
+  background-color: #4af;
+  border: none;
+  color: #000;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.tabla-botones button:hover {
+  background-color: #1c8ce3;
+  color: white;
+}
+
+#tabla-puntajes {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0;
+  background-color: #1e1e2f;
+  box-shadow: 0 0 12px #00ffc3;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+#tabla-puntajes th,
+#tabla-puntajes td {
+  padding: 1rem;
+  text-align: center;
+  color: #ffffff;
+  border-bottom: 1px solid #444;
+}
+
+#tabla-puntajes thead th {
+  background-color: #4af;
+  color: #000;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+#tabla-puntajes tr:nth-child(even) {
+  background-color: #2c2c3e;
+}
+
+/* ============================
+   🥇 Ranking Top 3 por clase
+============================ */
+
+.top1 {
+  background-color: gold !important;
+  color: black;
+  font-weight: bold;
+}
+.top2 {
+  background-color: silver !important;
+  color: black;
+  font-weight: bold;
+}
+.top3 {
+  background-color: #cd7f32 !important; /* bronce */
+  color: black;
+  font-weight: bold;
+}
+
+.top1 td:first-child::before {
+  content: "🥇 ";
+}
+.top2 td:first-child::before {
+  content: "🥈 ";
+}
+.top3 td:first-child::before {
+  content: "🥉 ";
+}
+
+/* ============================
+   ⭐ Usuario actual resaltado
+============================ */
+
+.usuario-actual {
+  background-color: rgba(255, 255, 0, 0.2);
+  font-weight: bold;
+}
+
+/* ============================
+   🎯 Botones generales
+============================ */
+
+#btn-recargar,
+#btn-buscar-mi-ranking {
+  margin: 1rem;
+  padding: 10px 16px;
+  font-size: 1rem;
+  background-color: #4af;
+  color: #000;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#btn-recargar:hover,
+#btn-buscar-mi-ranking:hover {
+  background-color: #2770b4;
+  color: white;
 }
