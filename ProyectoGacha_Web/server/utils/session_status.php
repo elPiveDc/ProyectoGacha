@@ -5,7 +5,8 @@ session_start();
 $response = [
   "logueado" => isset($_SESSION['usuario_id']),
   "nombre"   => $_SESSION['usuario_nombre'] ?? "",
-  "correo"   => $_SESSION['usuario_correo'] ?? ""
+  "correo"   => $_SESSION['usuario_correo'] ?? "",
+  "es_admin" => $_SESSION['es_admin'] ?? false
 ];
 
 // Enviar como JSON

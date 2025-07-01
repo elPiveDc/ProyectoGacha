@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const correoInput = document.getElementById("correo");
   const mensajeInput = document.getElementById("mensaje");
   const form = document.getElementById("form-contacto");
+  const enviarBtn = document.getElementById("enviar");
 
   let usuarioLogueado = false;
 
@@ -10,6 +11,12 @@ document.addEventListener("DOMContentLoaded", () => {
     .then((res) => res.json())
     .then((data) => {
       if (data.logueado) {
+        // Si es admin, redirigir automáticamente
+        if (data.es_admin) {
+          window.location.href = "/ProyectoGacha_Web/pages/vercomentarios.html";
+          return;
+        }
+
         nombreInput.value = data.nombre;
         correoInput.value = data.correo;
         nombreInput.readOnly = true;
@@ -18,6 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
+  // Manejo del envío del formulario
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
@@ -43,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const data = await res.json();
 
     if (data.status === "ok") {
-      alert(`Mensaje enviado. ¡Gracias por contactarnos! 😊`);
+      alert("Mensaje enviado. ¡Gracias por contactarnos! 😊");
       mensajeInput.value = "";
     } else {
       alert("Error: " + data.msg);

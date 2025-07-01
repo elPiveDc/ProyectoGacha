@@ -13,6 +13,49 @@ function validarFormulario() {
   return true;
 }
 
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("form-login");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+
+    fetch("/ProyectoGacha_Web/server/controllers/logincontroller.php", {
+      method: "POST",
+      body: formData,
+    })
+      .then((res) => res.json())
+      .then((respuesta) => {
+        if (respuesta.status === "ok") {
+          if (respuesta.es_admin) {
+            // Mostrar confirmación con opciones
+            const irComentarios = confirm(
+              "Has iniciado sesión como administrador.\n¿Deseas ir a la página de revisión de comentarios?"
+            );
+            if (irComentarios) {
+              window.location.href =
+                "/ProyectoGacha_Web/pages/vercomentarios.html";
+            } else {
+              window.location.href =
+                "/ProyectoGacha_Web/pages/menuPrincipal.html";
+            }
+          } else {
+            // Redirigir normal
+            window.location.href =
+              "/ProyectoGacha_Web/pages/menuPrincipal.html";
+          }
+        } else {
+          alert(respuesta.msg);
+        }
+      })
+      .catch((err) => {
+        console.error("Error al iniciar sesión:", err);
+        alert("Ocurrió un error al iniciar sesión.");
+      });
+  });
+});
+
 // ===============================
 // VALIDACIÓN DE FORMULARIO DE REGISTRO
 // ===============================

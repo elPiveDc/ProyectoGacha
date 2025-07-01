@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Panel de Comentarios</title>
+    <link rel="stylesheet" href="/ProyectoGacha_Web/assets/css/base.css" />
+    <link
+      rel="stylesheet"
+      href="/ProyectoGacha_Web/assets/css/comentarios.css"
+    />
+    <script defer src="/ProyectoGacha_Web/assets/js/vercometarios.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1>🗂️ Comentarios Recibidos</h1>
+    </header>
+    <main>
+      <section class="comentarios-lista">
+        <div class="filtros">
+          <input
+            type="text"
+            id="filtro-usuario"
+            placeholder="Buscar por usuario..."
+          />
+          <select id="filtro-reciente">
+            <option value="recientes">Más recientes</option>
+            <option value="antiguos">Más antiguos</option>
+          </select>
+          <button id="btn-inicio">🏠 Volver al menú</button>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Usuario</th>
+              <th>Comentario</th>
+              <th>Fecha</th>
+            </tr>
+          </thead>
+          <tbody id="tabla-comentarios">
+            <!-- JS llenará esto -->
+          </tbody>
+        </table>
+      </section>
+    </main>
+  </body>
+</html>
