@@ -4,15 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Personajes - Proyecto Gacha</title>
-
-    <!-- Estilos -->
     <link rel="stylesheet" href="/ProyectoGacha_Web/assets/css/base.css" />
     <link
       rel="stylesheet"
       href="/ProyectoGacha_Web/assets/css/sobreeljuego.css"
     />
-
-    <!-- Scripts -->
     <script defer src="/ProyectoGacha_Web/assets/js/navLoader.js"></script>
     <script defer src="/ProyectoGacha_Web/assets/js/sobrelejuego.js"></script>
   </head>
@@ -78,22 +74,24 @@
               🔄 Recargar
             </button>
             <button id="btn-buscar-mi-ranking" onclick="buscarMiPuntaje()">
-              🔍 Mi puntuación
+              🔍 Mi Poscion
             </button>
           </div>
         </div>
-        <table id="tabla-puntajes">
-          <thead>
-            <tr>
-              <th>Rango</th>
-              <th>Usuario</th>
-              <th>Puntuación Total</th>
-            </tr>
-          </thead>
-          <tbody>
-            <!-- Contenido generado dinámicamente -->
-          </tbody>
-        </table>
+        <div class="tabla-wrapper">
+          <table id="tabla-puntajes">
+            <thead>
+              <tr>
+                <th>Rango</th>
+                <th>Usuario</th>
+                <th>Puntuación Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Contenido generado dinámicamente -->
+            </tbody>
+          </table>
+        </div>
       </section>
     </main>
 
@@ -110,6 +108,5 @@
         </button>
       </div>
     </div>
-
   </body>
 </html>

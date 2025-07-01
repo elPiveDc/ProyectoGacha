@@ -41,6 +41,7 @@ footer {
 }
 
 /* Aplica la fuente explícitamente a todos los posibles elementos textuales */
+
 h1, h2, h3, h4, h5, h6,
 p, a, span, div, label,
 input, textarea, button, select, option {
@@ -73,4 +74,88 @@ input, textarea, button, select, option {
 
 .toggle-password:hover {
   color: #00ffff;
+}
+
+/* ================================
+   📱 RESPONSIVE TIPOGRAFÍA Y ESPACIADO
+================================== */
+
+body {
+  font-size: clamp(0.8rem, 2.5vw, 1rem); /* escala bien entre 320px y 1200px */
+  padding: 1rem;
+  word-break: break-word;
+}
+
+h1 {
+  font-size: clamp(1.2rem, 4vw, 1.6rem);
+  margin-bottom: 1rem;
+}
+
+h2, h3 {
+  font-size: clamp(1rem, 3vw, 1.4rem);
+  margin-bottom: 0.75rem;
+}
+
+p, a, span, label {
+  font-size: clamp(0.75rem, 2.5vw, 1rem);
+  line-height: 1.8;
+}
+
+/* Mejora legibilidad en formularios */
+input, textarea, select, button {
+  font-size: clamp(0.75rem, 2.5vw, 1rem);
+  padding: 0.75rem;
+  border-radius: 5px;
+}
+
+/* Botones táctiles */
+button {
+  min-height: 44px; /* tamaño mínimo para pantallas táctiles */
+  min-width: 100px;
+}
+
+/* Contenedor principal flexible */
+main {
+  margin-top: 7vh;
+  padding: 1rem;
+  width: 100%;
+}
+
+/* Footer más legible y con buen padding */
+footer {
+  font-size: clamp(0.7rem, 2vw, 0.9rem);
+  padding: 1.5rem 1rem;
+  word-wrap: break-word;
+}
+
+/* ================================
+   📱 MEDIA QUERY ADICIONAL PARA MÓVILES
+================================== */
+@media (max-width: 480px) {
+  body {
+    padding: 0.5rem;
+  }
+
+  .input-group input {
+    padding-right: 2.5rem;
+  }
+
+  .toggle-password {
+    font-size: 1.1rem;
+    right: 8px;
+  }
+
+  input, textarea, button {
+    width: 100%;
+    font-size: 0.85rem;
+  }
+
+  main {
+    margin-top: 5vh;
+  }
+
+  footer {
+    font-size: 0.8rem;
+    padding: 1rem 0.5rem;
+  }
 }

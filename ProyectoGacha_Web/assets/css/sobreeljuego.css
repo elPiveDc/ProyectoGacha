@@ -89,12 +89,15 @@ h1 {
   0% {
     transform: translateX(0);
   }
+
   33% {
     transform: translateX(-100%);
   }
+
   66% {
     transform: translateX(-200%);
   }
+
   100% {
     transform: translateX(0);
   }
@@ -110,17 +113,22 @@ h1 {
   background-color: #1c1c2e;
   border-radius: 10px;
   box-shadow: 0 0 10px #00ffc3;
+  overflow-x: auto;
+  /* <-- Para pantallas pequeñas */
 }
 
 .tabla-header {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 1rem;
+  gap: 1rem;
 }
 
 .tabla-header h2 {
   color: #00ffc3;
+  font-size: 1.3rem;
 }
 
 .tabla-botones button {
@@ -140,10 +148,16 @@ h1 {
   color: white;
 }
 
+/* Envuelve la tabla para overflow horizontal */
+.tabla-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
 #tabla-puntajes {
   width: 100%;
+  min-width: 600px;
   border-collapse: collapse;
-  margin: 2rem 0;
   background-color: #1e1e2f;
   box-shadow: 0 0 12px #00ffc3;
   border-radius: 8px;
@@ -178,13 +192,15 @@ h1 {
   color: black;
   font-weight: bold;
 }
+
 .top2 {
   background-color: silver !important;
   color: black;
   font-weight: bold;
 }
+
 .top3 {
-  background-color: #cd7f32 !important; /* bronce */
+  background-color: #cd7f32 !important;
   color: black;
   font-weight: bold;
 }
@@ -192,9 +208,11 @@ h1 {
 .top1 td:first-child::before {
   content: "🥇 ";
 }
+
 .top2 td:first-child::before {
   content: "🥈 ";
 }
+
 .top3 td:first-child::before {
   content: "🥉 ";
 }
@@ -204,7 +222,7 @@ h1 {
 ============================ */
 
 .usuario-actual {
-  background-color: rgba(255, 255, 0, 0.2);
+  background-color: rgba(179, 228, 209, 0.2);
   font-weight: bold;
 }
 
@@ -229,4 +247,43 @@ h1 {
 #btn-buscar-mi-ranking:hover {
   background-color: #2770b4;
   color: white;
+}
+
+/* ============================
+   📱 Responsive
+============================ */
+
+@media (max-width: 853px) {
+  .contenedor-personajes {
+    padding: 1rem;
+  }
+
+  .grid-personajes {
+    gap: 1rem;
+  }
+
+  .card {
+    padding: 1rem;
+  }
+
+  .tabla-header h2 {
+    font-size: 1.1rem;
+  }
+
+  .tabla-botones button {
+    width: 100%;
+    font-size: 0.95rem;
+    padding: 8px;
+    margin: 0;
+  }
+
+  #btn-recargar,
+  #btn-buscar-mi-ranking {
+    font-size: 0.9rem;
+    padding: 8px 12px;
+  }
+
+  .banner-clases {
+    height: 150px;
+  }
 }
