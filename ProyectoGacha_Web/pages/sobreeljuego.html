@@ -1,49 +1,115 @@
 <!DOCTYPE html>
 <html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personajes - Proyecto Gacha</title>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Personajes - Proyecto Gacha</title>
-  <link rel="stylesheet" href="/ProyectoGacha_Web/assets/css/base.css" />
-  <link rel="stylesheet" href="/ProyectoGacha_Web/assets/css/sobreeljuego.css" />
-  <script defer="" src="/ProyectoGacha_Web/assets/js/navLoader.js"></script>
-  <script defer="" src="/ProyectoGacha_Web/assets/js/sobrelejuego.js"></script>
-</head>
+    <!-- Estilos -->
+    <link rel="stylesheet" href="/ProyectoGacha_Web/assets/css/base.css" />
+    <link
+      rel="stylesheet"
+      href="/ProyectoGacha_Web/assets/css/sobreeljuego.css"
+    />
 
-<body>
-  <header>
-    <div id="nav-container"></div>
-  </header>
+    <!-- Scripts -->
+    <script defer src="/ProyectoGacha_Web/assets/js/navLoader.js"></script>
+    <script defer src="/ProyectoGacha_Web/assets/js/sobrelejuego.js"></script>
+  </head>
 
-  <main class="contenedor-personajes">
-    <h1>Personajes Principales</h1>
-    <section class="grid-personajes">
-      <div class="card">
-        <img src="/ProyectoGacha_Web/assets/images/personaje1.png" alt="Personaje 1" />
-        <h3>Nombre del personaje</h3>
-        <p>descripcion</p>
+  <body>
+    <header>
+      <div id="nav-container"></div>
+    </header>
+
+    <main class="contenedor-personajes">
+      <h1>Personajes Principales</h1>
+
+      <section class="grid-personajes">
+        <div class="card">
+          <img
+            src="/ProyectoGacha_Web/assets/images/personaje1.png"
+            alt="Personaje 1"
+          />
+          <h3>Nombre del personaje</h3>
+          <p>Descripción</p>
+        </div>
+        <div class="card">
+          <img
+            src="/ProyectoGacha_Web/assets/images/personaje2.png"
+            alt="Personaje 2"
+          />
+          <h3>Nombre del personaje</h3>
+          <p>Descripción</p>
+        </div>
+        <div class="card">
+          <img
+            src="/ProyectoGacha_Web/assets/images/personaje3.png"
+            alt="Personaje 3"
+          />
+          <h3>Nombre del personaje</h3>
+          <p>Descripción</p>
+        </div>
+      </section>
+
+      <section class="banner-clases">
+        <div class="slider">
+          <img
+            src="/ProyectoGacha_Web/assets/images/clase1.png"
+            class="slide active"
+          />
+          <img
+            src="/ProyectoGacha_Web/assets/images/clase2.png"
+            class="slide"
+          />
+          <img
+            src="/ProyectoGacha_Web/assets/images/clase3.png"
+            class="slide"
+          />
+        </div>
+      </section>
+
+      <!-- 🎖️ Tabla de puntuaciones -->
+      <section class="tabla-puntajes">
+        <div class="tabla-header">
+          <h2>Ranking de Puntajes</h2>
+          <div class="tabla-botones">
+            <button id="btn-recargar" onclick="cargarPuntajes()">
+              🔄 Recargar
+            </button>
+            <button id="btn-buscar-mi-ranking" onclick="buscarMiPuntaje()">
+              🔍 Mi puntuación
+            </button>
+          </div>
+        </div>
+        <table id="tabla-puntajes">
+          <thead>
+            <tr>
+              <th>Rango</th>
+              <th>Usuario</th>
+              <th>Puntuación Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Contenido generado dinámicamente -->
+          </tbody>
+        </table>
+      </section>
+    </main>
+
+    <!--Popup si no hay sesión activa -->
+    <div class="popup" id="popup-alerta2" style="display: none">
+      <div class="popup-content">
+        <span class="popup-close" onclick="cerrarPopup2()">×</span>
+        <h2>¡Recuerda!</h2>
+        <p>Para buscar tu puntuación, debes iniciar sesión primero.</p>
+        <button
+          onclick="window.location.href='/ProyectoGacha_Web/pages/iniciosesion.html'"
+        >
+          Iniciar sesión
+        </button>
       </div>
-      <div class="card">
-        <img src="/ProyectoGacha_Web/assets/images/personaje2.png" alt="Personaje 2" />
-        <h3>Nombre del personaje</h3>
-        <p>descripcion</p>
-      </div>
-      <div class="card">
-        <img src="/ProyectoGacha_Web/assets/images/personaje3.png" alt="Personaje 3" />
-        <h3>Nombre del personaje</h3>
-        <p>descripcion</p>
-      </div>
-    </section>
+    </div>
 
-    <section class="banner-clases">
-      <div class="slider">
-        <img src="/ProyectoGacha_Web/assets/images/clase1.png" class="slide active" />
-        <img src="/ProyectoGacha_Web/assets/images/clase2.png" class="slide" />
-        <img src="/ProyectoGacha_Web/assets/images/clase3.png" class="slide" />
-      </div>
-    </section>
-  </main>
-</body>
-
+  </body>
 </html>

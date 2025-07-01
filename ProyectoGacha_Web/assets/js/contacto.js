@@ -2,7 +2,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const nombreInput = document.getElementById("nombre");
   const correoInput = document.getElementById("correo");
   const mensajeInput = document.getElementById("mensaje");
-  const popup = document.getElementById("popup-alerta");
   const form = document.getElementById("form-contacto");
 
   let usuarioLogueado = false;
@@ -23,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
     e.preventDefault();
 
     if (!usuarioLogueado) {
-      popup.style.display = "flex";
+      document.getElementById("popup-alerta3").style.display = "flex";
       return;
     }
 
@@ -51,3 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+function cerrarPopup3() {
+  document.getElementById("popup-alerta3").style.display = "none";
+}
