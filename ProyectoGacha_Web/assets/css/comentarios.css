@@ -78,3 +78,42 @@ tbody tr:nth-child(even) {
   background-color: #1c8ce3;
   color: white;
 }
+
+/* ===============================
+   RESPONSIVE: Panel de Comentarios
+================================= */
+
+/* Tablet y abajo */
+@media (max-width: 1024px) {
+  .filtros {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.8rem;
+  }
+
+  .filtros input[type="text"],
+  .filtros select,
+  #btn-inicio {
+    width: 100%;
+  }
+}
+
+/* Móvil grande */
+@media (max-width: 768px) {
+  body {
+    padding: 1rem;
+  }
+
+  header h1 {
+    font-size: 1.8rem;
+  }
+
+  table {
+    font-size: 0.95rem;
+  }
+
+  th,
+  td {
+    padding: 0.8rem;
+  }
+}

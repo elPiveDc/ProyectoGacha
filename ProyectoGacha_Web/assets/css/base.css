@@ -1,7 +1,8 @@
 /* ================================
    🌍 RESET Y ESTILOS UNIVERSALES
 ================================== */
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
 
 *,
 *::before,
@@ -9,7 +10,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Press Start 2P', sans-serif !important; /* Fuerza la fuente en todo */
+  font-family: 'Michroma', sans-serif !important; /* Fuerza la fuente en todo */
 }
 
 :root {
@@ -41,10 +42,14 @@ footer {
 }
 
 /* Aplica la fuente explícitamente a todos los posibles elementos textuales */
-h1, h2, h3, h4, h5, h6,
+h2, h3, h4, h5, h6,
 p, a, span, div, label,
 input, textarea, button, select, option {
-  font-family: 'Press Start 2P', sans-serif !important;
+  font-family:'Michroma', sans-serif !important;
+}
+
+h1 {
+  font-family: 'Orbitron', sans-serif !important;
 }
 
 /* ================================

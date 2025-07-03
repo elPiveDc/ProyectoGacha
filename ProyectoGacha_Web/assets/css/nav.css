@@ -1,11 +1,15 @@
+/* ===========================
+   NAVBAR PRINCIPAL
+=========================== */
+
 .navbar {
-  background-color: #000000;
+  background-color: #0d0d0d;
   padding: 25px 40px;
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 999;
-  border-bottom: 2px solid #4af;
+  border-bottom: 2px solid #00ffc3;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
 
   display: flex;
@@ -13,15 +17,29 @@
   align-items: center;
 }
 
-.nav-left,
-.nav-right {
+.hamburger {
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  display: none;
+}
+
+.nav-left {
   display: flex;
   align-items: center;
-  gap: 40px;
+  gap: 30px;
+}
+
+.nav-session {
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
 .nav-left a,
-.nav-right a {
+.nav-session a {
   color: white;
   text-decoration: none;
   font-size: 12px;
@@ -30,7 +48,7 @@
 }
 
 .nav-left a::after,
-.nav-right a::after {
+.nav-session a::after {
   content: '';
   position: absolute;
   width: 100%;
@@ -38,25 +56,124 @@
   height: 3px;
   bottom: -5px;
   left: 0;
-  background-color: #4af;
+  background-color: #00ffc3;
   transform-origin: bottom right;
   transition: transform 0.3s ease-out;
 }
 
 .nav-left a:hover,
-.nav-right a:hover {
-  color: #4af;
+.nav-session a:hover {
+  color: #00ffc3;
 }
 
 .nav-left a:hover::after,
-.nav-right a:hover::after {
+.nav-session a:hover::after {
   transform: scaleX(1);
   transform-origin: bottom left;
 }
 
-/* ================================
-  ANIMACIONES GLOBALES Y VENTANAS EMERGENTES
-================================== */
+.nav-session p {
+  color: white;
+  margin: 0;
+  font-size: 12px;
+}
+
+/* ===========================
+   MENÚ LATERAL RESPONSIVE
+=========================== */
+
+.menu-lateral {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: width 0.3s ease;
+  padding-top: 60px;
+  z-index: 1000;
+}
+
+.menu-lateral a {
+  padding: 10px 25px;
+  text-decoration: none;
+  font-size: 12px;
+  color: #ccc;
+  display: block;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.menu-lateral.open a {
+  opacity: 1;
+}
+
+.menu-lateral a:hover {
+  background-color: #333;
+  color: #00ffc3;
+}
+
+.menu-lateral .closebtn {
+  position: absolute;
+  top: 12px;
+  right: 20px;
+  font-size: 18px;
+  color: #fff;
+  padding: 5px;
+}
+
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+  z-index: 999;
+}
+
+.menu-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media (max-width: 853px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-left {
+    display: none;
+  }
+
+  .nav-session {
+    display: flex;
+    gap: 30px;
+  }
+
+  .nav-session a,
+  .nav-session p {
+    font-size: 10px;
+    text-align: center;
+    white-space: normal;
+    width: 60px;
+    display: inline-block;
+  }
+
+}
+
+/* ===========================
+   POPUP
+=========================== */
+
 .popup {
   position: fixed;
   top: 0;
@@ -67,7 +184,7 @@
   display: none;
   justify-content: center;
   align-items: center;
-  z-index: 10;
+  z-index: 2000;
 }
 
 .popup-content {
@@ -87,13 +204,12 @@
 
 .popup-content p {
   margin-bottom: 1.5rem;
-  /* Separación entre texto y botón */
 }
 
 .popup-content button {
   width: auto;
   padding: 10px 20px;
-  background: #4af;
+  background: #00ffc3;
   color: #000;
   font-weight: bold;
   border: none;
@@ -105,12 +221,12 @@
 
 .popup-content button:active {
   transform: scale(0.95);
-  background-color: #1c5fa3;
+  background-color: #087a60;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4) inset;
 }
 
 .popup-content button:hover {
-  background: #2770b4;
+  background: #058567;
   transform: scale(1.05);
   color: white;
 }
