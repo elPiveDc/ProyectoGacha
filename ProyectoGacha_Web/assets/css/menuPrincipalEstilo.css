@@ -24,33 +24,29 @@
   z-index: 1;
 }
 
-/* Contenido por encima */
 .menuP .contenido {
   position: relative;
   z-index: 2;
   text-align: center;
   color: #ffffff;
-  max-width: 700px;
+  max-width: 800px;
   animation: fadeIn 1.5s ease-in-out;
 }
 
-/* Título */
 .titulo-juego {
-  font-size: 2.5rem;
-  color: #4af;
-  text-shadow: 2px 2px #000;
+  font-size: 2.8rem;
+  color: #00ffc3;
+  text-shadow: 2px 2px #000000;
   margin-bottom: 1rem;
 }
 
-/* Slogan con animación */
 .slogan {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   color: #fff;
   margin-bottom: 1.5rem;
   animation: flicker 2s infinite alternate;
 }
 
-/* Resumen */
 .resumen {
   font-size: 1rem;
   margin-bottom: 2rem;
@@ -58,10 +54,9 @@
   animation: fadeUp 1.5s ease;
 }
 
-/* Botones */
 .botones {
   display: flex;
-  gap: 20px;
+  gap: 25px;
   flex-wrap: wrap;
   justify-content: center;
 }
@@ -70,16 +65,17 @@
   font-size: 14px;
   text-decoration: none;
   padding: 12px 24px;
-  border: 2px solid #4af;
-  color: #4af;
+  border: 2px solid #00ffc3;
+  color: #00ffc3;
   background-color: transparent;
   transition: all 0.3s ease;
   border-radius: 5px;
 }
 
 .btn:hover {
-  background-color: #4af;
-  color: #000;
+  border: #00ffc3;
+  background-color: #00ffc3;
+  color: rgb(0, 0, 0);
   cursor: pointer;
   transform: scale(1.05);
 }
@@ -87,9 +83,9 @@
 /* ANIMACIONES */
 @keyframes flicker {
   0% { opacity: 1; }
-  45% { opacity: 0.6; }
+  45% { opacity: 0.5; }
   60% { opacity: 1; }
-  75% { opacity: 0.7; }
+  75% { opacity: 0.6; }
   100% { opacity: 1; }
 }
 
@@ -101,4 +97,114 @@
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===============================
+   RESPONSIVE: Tablet y Móvil
+================================ */
+@media (max-width: 1024px) {
+  .menuP {
+    padding: 3rem 1.5rem;
+    margin-top: -2vh;
+  }
+
+  .titulo-juego {
+    font-size: 4rem;
+  }
+
+  .slogan {
+    font-size: 2rem;
+  }
+
+  .resumen {
+    font-size: 1.5rem;
+  }
+
+  .botones {
+    flex-direction: column;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    font-size: 2rem;
+    padding: 10px 20px;
+  }
+}
+
+@media (max-width: 853px) {
+  .menuP .contenido {
+    padding: 2%;
+    margin-top: -30vh;
+  }
+
+  .titulo-juego {
+    font-size: 3rem;
+  }
+
+  .slogan {
+    font-size: 1rem;
+    max-width: 100%;
+  }
+
+  .resumen {
+    font-size: 0.95rem;
+  }
+
+  .botones {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .btn {
+    width: 100%;
+    font-size: 16px;
+    padding: 14px;
+  }
+}
+
+@media (max-width: 430px) {
+  .menuP .contenido {
+    padding: 2%;
+    margin-top: -15vh;
+  }
+  .titulo-juego {
+    font-size: 1.6rem;
+  }
+
+  .slogan {
+    font-size: 0.95rem;
+  }
+
+  .resumen {
+    font-size: 0.9rem;
+  }
+
+  .btn {
+    font-size: 15px;
+    padding: 12px;
+  }
+}
+
+@media (max-width: 390px) {
+  .menuP .contenido {
+    padding: 2%;
+    margin-top: 5vh;
+  }
+  .titulo-juego {
+    font-size: 1.6rem;
+  }
+
+  .slogan {
+    font-size: 0.95rem;
+  }
+
+  .resumen {
+    font-size: 0.9rem;
+  }
+
+  .btn {
+    font-size: 15px;
+    padding: 12px;
+  }
 }

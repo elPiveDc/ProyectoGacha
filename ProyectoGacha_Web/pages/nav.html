@@ -1,44 +1,56 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Juego de Probabilidad</title>
-  </head>
 
-  <body>
-    <header>
-      <nav class="navbar">
-        <div class="nav-left">
-          <a href="/ProyectoGacha_Web/pages/menuPrincipal.html">Inicio</a>
-          <a href="/ProyectoGacha_Web/pages/sobreeljuego.html">El Juego</a>
-          <a href="/ProyectoGacha_Web/pages/sobreElProyecto.html"
-            >El Proyecto</a
-          >
-          <a href="/ProyectoGacha_Web/pages/contacto.html">Contacto</a>
-        </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Juego de Probabilidad</title>
+</head>
 
-        <div class="nav-right">
-          <p id="nombre"></p>
-          <a href="iniciosesion.html" id="nav-usuario">Iniciar Sesión</a>
-          <a href="#" id="btn-descargar">Descargar</a>
-        </div>
-      </nav>
-    </header>
+<body>
+  <header>
+    <nav class="navbar">
+      <!-- Botón hamburguesa -->
+      <button class="hamburger" onclick="abrirMenu()">☰</button>
 
-    <!-- Ventana emergente de acceso -->
-    <div class="popup" id="popup-alerta" style="display: none">
-      <div class="popup-content">
-        <span class="popup-close" onclick="cerrarPopup()">×</span>
-        <h2>Acceso restringido</h2>
-        <p>Para descargar el juego, debes iniciar sesión primero.</p>
-        <button
-          onclick="window.location.href='/ProyectoGacha_Web/pages/iniciosesion.html'"
-        >
-          Iniciar sesión
-        </button>
+      <!-- Menú de escritorio -->
+      <div class="nav-left">
+        <a href="/ProyectoGacha_Web/pages/menuPrincipal.html">Inicio</a>
+        <a href="/ProyectoGacha_Web/pages/sobreeljuego.html">El Juego</a>
+        <a href="/ProyectoGacha_Web/pages/sobreElProyecto.html">El Proyecto</a>
+        <a href="/ProyectoGacha_Web/pages/contacto.html">Contacto</a>
       </div>
+
+      <div class="nav-session">
+        <p id="nombre"></p>
+        <a href="/ProyectoGacha_Web/pages/iniciosesion.html" id="nav-usuario">Iniciar Sesión</a>
+        <a href="#" id="btn-descargar">Descargar</a>
+      </div>
+
+      <!-- Menú lateral móvil -->
+      <div id="menu-lateral" class="menu-lateral">
+        <a href="javascript:void(0)" class="closebtn" onclick="cerrarMenu()">×</a>
+        <a href="/ProyectoGacha_Web/pages/menuPrincipal.html">Inicio</a>
+        <a href="/ProyectoGacha_Web/pages/sobreeljuego.html">El Juego</a>
+        <a href="/ProyectoGacha_Web/pages/sobreElProyecto.html">El Proyecto</a>
+        <a href="/ProyectoGacha_Web/pages/contacto.html">Contacto</a>
+      </div>
+      <div id="menu-overlay" class="menu-overlay" onclick="cerrarMenu()"></div>
+    </nav>
+  </header>
+
+  <!-- POP UP -->
+  <div class="popup" id="popup-alerta" style="display: none">
+    <div class="popup-content">
+      <span class="popup-close" onclick="cerrarPopup()">×</span>
+      <h2>Acceso restringido</h2>
+      <p>Para descargar el juego, debes iniciar sesión primero.</p>
+      <button onclick="window.location.href='/ProyectoGacha_Web/pages/iniciosesion.html'">
+        Iniciar sesión
+      </button>
     </div>
-    
-  </body>
+  </div>
+
+</body>
+
 </html>

@@ -1,0 +1,3 @@
+mklink /D C:\xampp\htdocs\ProyectoGacha_Web "C:\Users\JIMENA\OneDrive\Desktop\Proyecto\ProyectoGacha_Web"
+
+https://www.canva.com/design/DAGsFClCPNk/N2OSqdWJGExzhxM3nsr8cg/edit?utm_content=DAGsFClCPNk&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton

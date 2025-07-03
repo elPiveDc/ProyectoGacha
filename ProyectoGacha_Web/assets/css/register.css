@@ -31,7 +31,7 @@
   background-color: #2c2c3e;
   padding: 2rem;
   border-radius: 10px;
-  box-shadow: 0 0 15px #000;
+  box-shadow: 0 0 15px #00ffc3;
   text-align: center;
   width: 350px;
   animation: fadein 0.5s ease-in;
@@ -40,6 +40,7 @@
 
 .register-container h1 {
   margin-bottom: 1.5rem;
+  color: #00ffc3;;
 }
 
 .register-container input {
@@ -76,6 +77,7 @@
   color: white;
   font-weight: bold;
   transition: background-color 0.3s ease;
+  border-radius: 10px;
 }
 
 .register-container button:hover {
@@ -88,52 +90,106 @@
 }
 
 .register-container a {
-  color: #00ffff;
+  color: #00ffc3;
   text-decoration: underline;
   display: inline-block;
 }
 
-@media (max-width: 768px) {
-  .register-layout {
-    flex-direction: column;
-    height: auto;
-    min-height: 100vh;
-  }
-
-  .left-column {
-    order: 2;
-    width: 100%;
-    height: 180px;
-    overflow: hidden;
-  }
-
-  .left-column .img-fondo {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .right-column {
-    order: 1;
-    width: 100%;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 1rem;
-    background: #151525;
-  }
-
+/* ===============================
+   📱 Tablet
+================================ */
+@media (max-width: 1024px) {
   .register-container {
-    width: 100%;
-    max-width: 400px;
-    margin: 2rem auto;
+    width: 300px;
     padding: 1.5rem;
+  }
+
+  .register-container h1 {
+    font-size: 1.8rem;
+  }
+
+  .register-container input {
+    font-size: 0.95rem;
+  }
+
+  .register-container button {
+    font-size: 0.95rem;
   }
 }
 
-@media (max-width: 480px) {
+/* ===============================
+   📱 Móviles medianos
+================================ */
+@media (max-width: 853px) {
+  .register-layout {
+    display: flex;
+  }
+
+  .left-column {
+    display: none;
+  }
+
+  .right-column {
+    display: flex;
+    flex: none;
+    width: 100%;
+    background: url('/ProyectoGacha_Web/assets/Images/fondo.JPG') no-repeat center center;
+    background-size: cover;
+    position: relative;
+  }
+
+  .right-column::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5); /* Fondo seminegro encima de la imagen */
+    z-index: 1;
+  }
+
   .register-container {
-    padding: 1rem;
+    max-width: 600px; /* Aquí lo haces más grande */
     width: 90%;
+    background-color: rgba(44, 44, 62, 0.95);
+    margin: 4rem auto;
+    position: relative;
+    z-index: 2; /* Para quedar por encima del overlay negro */
+  }
+}
+
+
+/* ===============================
+   📱 Móviles pequeños
+================================ */
+@media (max-width: 430px) {
+  .register-container {
+    width: 90%;
+    padding: 1rem;
+  }
+
+  .register-container h1 {
+    font-size: 1.6rem;
+  }
+
+  .register-container input {
+    font-size: 0.9rem;
+  }
+
+  .register-container button {
+    font-size: 0.9rem;
+  }
+
+  .register-container p {
+    font-size: 0.85rem;
+  }
+}
+
+/* ===============================
+   📱 Móviles muy pequeños
+================================ */
+@media (max-width: 390px) {
+  .register-container {
+    width: 95%;
+    padding: 0.8rem;
   }
 
   .register-container h1 {
@@ -141,20 +197,14 @@
   }
 
   .register-container input {
-    font-size: 0.95rem;
-    padding: 9px;
+    font-size: 0.85rem;
   }
 
   .register-container button {
-    font-size: 1rem;
-    padding: 10px;
+    font-size: 0.85rem;
   }
 
   .register-container p {
     font-size: 0.8rem;
-  }
-
-  .register-container a {
-    font-size: 0.85rem;
   }
 }

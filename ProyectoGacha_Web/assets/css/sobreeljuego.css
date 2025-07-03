@@ -1,5 +1,5 @@
 main {
-  margin-top: 7vh;
+  margin-top: 10vh;
 }
 
 .contenedor-personajes {
@@ -8,8 +8,9 @@ main {
 }
 
 h1 {
-  margin-bottom: 2rem;
+  margin-bottom: 2.8rem;
   color: #00ffc3;
+  font-size: 2.5rem;
 }
 
 /* ============================
@@ -89,15 +90,12 @@ h1 {
   0% {
     transform: translateX(0);
   }
-
   33% {
     transform: translateX(-100%);
   }
-
   66% {
     transform: translateX(-200%);
   }
-
   100% {
     transform: translateX(0);
   }
@@ -113,22 +111,17 @@ h1 {
   background-color: #1c1c2e;
   border-radius: 10px;
   box-shadow: 0 0 10px #00ffc3;
-  overflow-x: auto;
-  /* <-- Para pantallas pequeñas */
 }
 
 .tabla-header {
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 1rem;
-  gap: 1rem;
 }
 
 .tabla-header h2 {
   color: #00ffc3;
-  font-size: 1.3rem;
 }
 
 .tabla-botones button {
@@ -148,16 +141,10 @@ h1 {
   color: white;
 }
 
-/* Envuelve la tabla para overflow horizontal */
-.tabla-wrapper {
-  width: 100%;
-  overflow-x: auto;
-}
-
 #tabla-puntajes {
   width: 100%;
-  min-width: 600px;
   border-collapse: collapse;
+  margin: 2rem 0;
   background-color: #1e1e2f;
   box-shadow: 0 0 12px #00ffc3;
   border-radius: 8px;
@@ -192,15 +179,13 @@ h1 {
   color: black;
   font-weight: bold;
 }
-
 .top2 {
   background-color: silver !important;
   color: black;
   font-weight: bold;
 }
-
 .top3 {
-  background-color: #cd7f32 !important;
+  background-color: #cd7f32 !important; /* bronce */
   color: black;
   font-weight: bold;
 }
@@ -208,11 +193,9 @@ h1 {
 .top1 td:first-child::before {
   content: "🥇 ";
 }
-
 .top2 td:first-child::before {
   content: "🥈 ";
 }
-
 .top3 td:first-child::before {
   content: "🥉 ";
 }
@@ -222,7 +205,7 @@ h1 {
 ============================ */
 
 .usuario-actual {
-  background-color: rgba(179, 228, 209, 0.2);
+  background-color: rgba(255, 255, 0, 0.2);
   font-weight: bold;
 }
 
@@ -249,41 +232,153 @@ h1 {
   color: white;
 }
 
-/* ============================
-   📱 Responsive
-============================ */
-
-@media (max-width: 853px) {
+/* ===============================
+   📱 Tablet y Móvil
+================================ */
+@media (max-width: 1024px) {
   .contenedor-personajes {
-    padding: 1rem;
+    padding: 1.5rem;
+  }
+
+  h1 {
+    font-size: 2.5rem;
   }
 
   .grid-personajes {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .banner-clases {
+    height: 180px;
+  }
+
+  .tabla-header {
+    flex-direction: column;
+    align-items: flex-start;
     gap: 1rem;
   }
 
-  .card {
-    padding: 1rem;
+  .tabla-botones button {
+    font-size: 0.9rem;
+    padding: 8px 12px;
+  }
+}
+
+/* ===============================
+   📱 Móviles medianos
+================================ */
+@media (max-width: 853px) {
+  h1 {
+    font-size: 2rem;
   }
 
-  .tabla-header h2 {
-    font-size: 1.1rem;
+  .grid-personajes {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .banner-clases {
+    height: 160px;
+    width: 100%;
+  }
+
+  #tabla-puntajes th,
+  #tabla-puntajes td {
+    padding: 0.75rem;
+    font-size: 0.9rem;
+  }
+
+  .tabla-botones {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
   }
 
   .tabla-botones button {
     width: 100%;
     font-size: 0.95rem;
-    padding: 8px;
-    margin: 0;
+    max-width: 96%;
+  }
+}
+
+/* ===============================
+   📱 Móviles pequeños
+================================ */
+@media (max-width: 430px) {
+  h1 {
+    font-size: 1.6rem;
   }
 
-  #btn-recargar,
-  #btn-buscar-mi-ranking {
-    font-size: 0.9rem;
-    padding: 8px 12px;
+  .contenedor-personajes{
+    margin-top: 10vh;
+  }
+
+  .grid-personajes {
+    grid-template-columns: 1fr;
   }
 
   .banner-clases {
-    height: 150px;
+    height: 140px;
+  }
+
+  #tabla-puntajes {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  #tabla-puntajes table {
+    width: 100%;
+  }
+
+  #tabla-puntajes th{
+    font-size: 0.8rem;
+  }
+
+  #tabla-puntajes td {
+    font-size: 0.7rem;
+    padding: 0.5rem;
+  }
+
+  .tabla-botones button {
+    font-size: 0.85rem;
+    max-width: 90%;
+  }
+
+}
+
+/* ===============================
+   📱 Móviles muy pequeños
+================================ */
+@media (max-width: 390px) {
+  .contenedor-personajes{
+    margin-top: 12vh;
+  }
+
+  .grid-personajes {
+    grid-template-columns: 1fr;
+  }
+
+  h1 {
+    font-size: 1.4rem;
+  }
+
+  .banner-clases {
+    height: 120px;
+  }
+
+  #tabla-puntajes th{
+    font-size: 0.7rem;
+  }
+
+  #tabla-puntajes td {
+    font-size: 0.6rem;
+    padding: 0.5rem;
+  }
+
+  .tabla-botones button {
+    max-width: 90%;
+    font-size: 0.7rem;
   }
 }

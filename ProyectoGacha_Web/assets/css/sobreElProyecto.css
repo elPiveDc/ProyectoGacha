@@ -10,9 +10,10 @@
 
 .titulo-seccion {
     text-align: center;
-    color: #4af;
+    color: #00ffc3;
     font-size: 35px;
     margin-bottom: 5%
+    
 }
 
 .proyecto-grid {
@@ -27,14 +28,14 @@
     overflow: hidden;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
     transition: transform 0.3s, box-shadow 0.3s;
-    border: 2px solid #4af;
-    box-shadow: 0 0 25px rgb(26, 51, 70);
+    border: 2px solid #00ffc3;
+    box-shadow: 0 0 25px #058567;
 }
 
 .proyecto-card:hover {
     transform: translateY(-6px);
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
-    box-shadow: 0 0 25px #4af;
+    box-shadow: 0 0 25px #31ffcf;
 }
 
 .proyecto-card img {
@@ -47,7 +48,7 @@
 }
 
 .card-content h3 {
-    color: #4af;
+    color: #00ffc3;
     font-size: 18px;
     margin-bottom: 10px;
 }
@@ -70,7 +71,7 @@
     display: inline-block;
     margin-top: 15px;
     padding: 8px 16px;
-    background-color: #4af;
+    background-color: #00ffc3;
     color: #222;
     text-decoration: none;
     border-radius: 4px;
@@ -79,7 +80,7 @@
 }
 
 .btn-vermas:hover {
-    background-color: #6cf;
+    background-color: #2a8671;
 }
 
 .datos-curiosos {
@@ -89,13 +90,13 @@
     overflow: hidden;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
     transition: transform 0.3s, box-shadow 0.3s;
-    box-shadow: 0 0 25px rgb(26, 51, 70);
+    box-shadow: 0 0 25px #058567;
     margin-top: 30px;
-    border: 2px dashed #4af;
+    border: 2px dashed #00ffc3;
 }
 
 .datos-curiosos h3 {
-    color: #4af;
+    color: #00ffc3;
     font-size: 20px;
     margin-bottom: 15px;
 }
@@ -111,12 +112,156 @@
 .datos-curiosos:hover {
     transform: translateY(-6px);
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
-    box-shadow: 0 0 25px #4af;
+    box-shadow: 0 0 25px #00ffc3;
 }
 
 .imagen-lateral {
-  float: right;
-  width: 120px;
-  margin-left: 20px;
-  border-radius: 8px;
+    float: right;
+    width: 120px;
+    margin-left: 20px;
+    border-radius: 8px;
+}
+
+/* ===============================
+   RESPONSIVE: Tablet y Móvil
+================================= */
+
+@media (max-width: 1024px) {
+    .proyecto-seccion {
+        padding: 3rem 1.5rem;
+        max-width: 85%;
+    }
+
+    .titulo-seccion {
+        font-size: 2.5rem;
+    }
+
+    .card-content h3 {
+        font-size: 1.2rem;
+    }
+
+    .card-content p {
+        font-size: 1rem;
+    }
+
+    .btn-vermas {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+
+    .datos-curiosos h3 {
+        font-size: 1.2rem;
+    }
+
+    .datos-curiosos li {
+        font-size: 1rem;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 853px) {
+    .proyecto-seccion {
+        padding: 2rem 1rem;
+        max-width: 95%;
+    }
+
+    .titulo-seccion {
+        font-size: 2rem;
+    }
+
+    .proyecto-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .card-content h3 {
+        font-size: 1.1rem;
+    }
+
+    .card-content p {
+        font-size: 0.95rem;
+    }
+
+    .btn-vermas {
+        width: 100%;
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    .datos-curiosos li {
+        font-size: 0.95rem;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 430px) {
+    .proyecto-seccion {
+        padding: 1.5rem 1rem;
+        max-width: 98%;
+    }
+
+    .proyecto-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .titulo-seccion {
+        font-size: 1.6rem;
+    }
+
+    .card-content h3 {
+        font-size: 1rem;
+    }
+
+    .card-content p {
+        font-size: 0.9rem;
+    }
+
+    .btn-vermas {
+        font-size: 0.95rem;
+        padding: 12px;
+    }
+
+    .datos-curiosos h3 {
+        font-size: 1rem;
+    }
+
+    .datos-curiosos li {
+        font-size: 0.9rem;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 390px) {
+    .proyecto-seccion {
+        margin-top: 13vh;
+    }
+
+    .proyecto-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .titulo-seccion {
+        font-size: 1.4rem;
+    }
+
+    .card-content h3 {
+        font-size: 0.95rem;
+    }
+
+    .card-content p {
+        font-size: 0.85rem;
+    }
+
+    .btn-vermas {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+
+    .datos-curiosos h3 {
+        font-size: 0.95rem;
+    }
+
+    .datos-curiosos li {
+        font-size: 0.85rem;
+        max-width: 100%;
+    }
 }
